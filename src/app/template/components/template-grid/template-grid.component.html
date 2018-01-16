@@ -1,0 +1,12 @@
+<div class="grid">
+  <a [routerLink]="['edit']">
+    <template-tile
+      *ngFor="let template of templates"
+      [name]="template.name"
+      [type]="template.type"
+      class="tile"
+      (click)="onClick(template)"
+    >
+    </template-tile>
+  </a>
+</div>

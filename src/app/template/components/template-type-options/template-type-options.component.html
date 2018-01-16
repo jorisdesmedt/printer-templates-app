@@ -1,0 +1,17 @@
+<div class="option-wrapper">
+  <template-tile class="option" [name]="'Kitchen'"
+                 [type]="TemplateType.KITCHEN"
+                 (click)="selectTemplateType(TemplateType.KITCHEN)"
+                 [class.selected]="value === TemplateType.KITCHEN"
+  ></template-tile>
+  <template-tile class="option" [name]="'Bar'"
+                 [type]="TemplateType.BAR"
+                 (click)="selectTemplateType(TemplateType.BAR)"
+                 [class.selected]="value === TemplateType.BAR"
+  ></template-tile>
+  <template-tile class="option" [name]="'Receipt'"
+                 [type]="TemplateType.RECEIPT"
+                 (click)="selectTemplateType(TemplateType.RECEIPT)"
+                 [class.selected]="value === TemplateType.RECEIPT"
+  ></template-tile>
+</div>

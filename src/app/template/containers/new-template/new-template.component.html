@@ -1,0 +1,53 @@
+<main>
+  <nav>
+    <h4>
+      <span class="parent">Templates</span>
+      <span class="separator">
+        <i aria-hidden="true" class="fa fa-angle-right"></i>
+      </span>
+      <span class="child">
+        New
+      </span>
+    </h4>
+    <div class="actions">
+      <a class="o-button o-button--default o-button--small" [routerLink]="['..']">Cancel</a>
+    </div>
+  </nav>
+  <section>
+    <form [formGroup]="form">
+      <wizard-card
+        [class.active]="step === 0"
+        [previousEnabled]="false"
+        [nextEnabled]="(templateType$ | async) != null"
+        (next)="onNextClicked()"
+        (previous)="onPreviousClicked()"
+      >
+        <h1 class="question">Which type of template do you want to create?</h1>
+        <template-type-options class="component" formControlName="type"></template-type-options>
+      </wizard-card>
+      <wizard-card
+        [class.active]="step === 1"
+        [previousEnabled]="true"
+        [nextEnabled]="!!(templateName$ | async)"
+        (next)="onNextClicked()"
+        (previous)="onPreviousClicked()"
+      >
+        <h1 class="question">Give a clear name for this template:</h1>
+        <div class="component form-group">
+          <input type="text" formControlName="name" required>
+        </div>
+      </wizard-card>
+      <wizard-card
+        [class.active]="step === 2"
+        [previousEnabled]="true"
+        [nextEnabled]="(printer$ | async) != null"
+        [nextLabel]="'Create'"
+        (next)="onNextClicked()"
+        (previous)="onPreviousClicked()"
+      >
+        <h1 class="question">Which printer do you want to use for this template?</h1>
+        <printer-options class="component" formControlName="printer" [printers]="printers$ | async"></printer-options>
+      </wizard-card>
+    </form>
+  </section>
+</main>

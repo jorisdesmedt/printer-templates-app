@@ -1,0 +1,59 @@
+<!--<div class="wrapper">-->
+  <!--<div class="preview">-->
+    <!--<app-template-preview [templateComponents]="templateComponents"></app-template-preview>-->
+  <!--</div>-->
+<!--</div>-->
+<main>
+  <nav>
+    <h4>
+      <span class="parent">
+        Templates
+      </span>
+      <span class="separator">
+        <i aria-hidden="true" class="fa fa-angle-right"></i>
+      </span>
+      <span class="child">
+        Edit
+      </span>
+    </h4>
+    <div class="actions">
+      <button class="o-button o-button--primary" (click)="toggleMode()">Switch mode</button>
+    </div>
+  </nav>
+  <section *ngIf="!previewMode">
+    <div class="template-lists" [class.add-items]="addItemsView">
+      <app-template-component-item-list
+        class="template-components"
+        [templateComponentItems]="templateComponents$ | async"
+        (addTemplateComponentItem)="onTemplateComponentItemAdd($event)"
+      >
+      </app-template-component-item-list>
+      <template-component-order-item-list
+        class="visualised-template"
+        [templateComponentItems]="visualisedTemplateComponents$ | async"
+        (remove)="onTemplateComponentItemRemove($event)"
+        (up)="onTemplateComponentItemMoveUp($event)"
+        (down)="onTemplateComponentItemMoveDown($event)"
+      >
+      </template-component-order-item-list>
+    </div>
+    <button class="o-button o-button--default" (click)="toggleView()">Switch view</button>
+  </section>
+  <section *ngIf="previewMode">
+    <div class="template-preview-lists">
+      <div class="template-edit">
+        <dynamic-edit-template
+          [component]="editingTemplateComponent$ | async"
+          (dataChange)="onTemplateComponentDataChange($event)"
+          style="overflow: auto;"
+        ></dynamic-edit-template>
+      </div>
+      <app-template-preview
+        class="template-preview"
+        [templateComponents]="visualisedTemplateComponents$ | async"
+        (select)="onTemplateComponentSelect($event)"
+      >
+      </app-template-preview>
+    </div>
+  </section>
+</main>

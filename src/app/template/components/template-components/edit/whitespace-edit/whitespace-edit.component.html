@@ -1,0 +1,9 @@
+<form [formGroup]="form" (submit)="save($event, form)">
+  <div class="form-group">
+    <label>Height</label>
+    <input type="number" formControlName="height">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="o-button o-button--primary">Save</button>
+  </div>
+</form>

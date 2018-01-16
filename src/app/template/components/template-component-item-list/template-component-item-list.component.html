@@ -1,0 +1,8 @@
+<div class="list">
+  <template-component-item
+    *ngFor="let templateComponentItem of templateComponentItems"
+    class="item"
+    [templateComponentItem]="templateComponentItem"
+    (add)="addTemplateComponentItem.emit($event)"
+  ></template-component-item>
+</div>

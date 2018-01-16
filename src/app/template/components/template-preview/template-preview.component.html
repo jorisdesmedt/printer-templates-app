@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <dynamic-template-component
+    class="item"
+    *ngFor="let component of templateComponents;index as i;"
+    [component]="component"
+    (click)="onTemplateComponentItemSelect(i)"
+  >
+  </dynamic-template-component>
+</div>

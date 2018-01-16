@@ -1,0 +1,64 @@
+{
+  "templates": [
+    {
+      "id": 1,
+      "name": "Kitchen",
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "Bar",
+      "type": 0
+    },
+    {
+      "id": 3,
+      "name": "Receipt",
+      "type": 2
+    },
+    {
+      "type": 1,
+      "name": "Test",
+      "printer": {
+        "id": 2,
+        "name": "Kitchen 2"
+      },
+      "id": 4
+    },
+    {
+      "type": 1,
+      "name": "Test 2",
+      "printer": {
+        "id": 4,
+        "name": "Receipt"
+      },
+      "id": 5
+    },
+    {
+      "type": 1,
+      "name": "Test",
+      "printer": {
+        "id": 3,
+        "name": "Bar"
+      },
+      "id": 6
+    }
+  ],
+  "printers": [
+    {
+      "id": 1,
+      "name": "Kitchen 1"
+    },
+    {
+      "id": 2,
+      "name": "Kitchen 2"
+    },
+    {
+      "id": 3,
+      "name": "Bar"
+    },
+    {
+      "id": 4,
+      "name": "Receipt"
+    }
+  ]
+}

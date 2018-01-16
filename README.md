@@ -1,27 +1,39 @@
-# PrinterTemplatesApp
+# PoC NgRX - Printer Templates
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
+This is a PoC to test NgRx store.
 
-## Development server
+While learning NgRx I was looking for a use case I have met in the past where I could really benefit from NgRx.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I found this use case at a previous company I worked where we created a management application for POS systems.
+With this application it was possible to create a printer template which could be used by the POS system to print
+tickets.
 
-## Code scaffolding
+Not only could you create a printer template, you could also preview it, making it extra hard of course to sync state.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+On top of all that we didn't use any framework (it was done with JQuery) and the design was very confusing because
+we couldn't make it dynamic because of lacking state management.
 
-## Build
+So, the need to sync, no state management, no framework and the fact that the design could be made better made this the 
+perfect candidate for a PoC.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## How to run
 
-## Running unit tests
+The application uses a json webserver to persist everything, to start it run: `npm run json-server`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Afterwards you can start the application: `npm start`
 
-## Running end-to-end tests
+The webserver is started on `localhost:3004` and a proxy is created by the angular application.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+You can change this settings in `proxy.conf.json`
 
-## Further help
+## This is work in progress
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Not everything works yet. And in some pages the design is broken, I know.
+
+What can you do already:
+* You can see an overview of all created templates
+* You can create a new one by clicking the create button
+* You can already play a little with the previewing and adding components to the printer template
+
+The last bullet point needs the most work. You can already go in to edit mode, but it will always start from a
+blank template and you can't save it yet.

@@ -1,0 +1,14 @@
+<div class="tile">
+  <div class="icon">
+    <i
+      class="fa"
+      [class.fa-cutlery]="type === TemplateType.BAR"
+      [class.fa-glass]="type === TemplateType.KITCHEN"
+      [class.fa-file-text]="type === TemplateType.RECEIPT"
+    >
+    </i>
+  </div>
+  <div class="name">
+    {{name}}
+  </div>
+</div>

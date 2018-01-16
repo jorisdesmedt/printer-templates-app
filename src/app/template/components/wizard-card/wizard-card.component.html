@@ -1,0 +1,8 @@
+<div class="card">
+  <ng-content select=".question"></ng-content>
+  <ng-content select=".component"></ng-content>
+  <div class="actions">
+    <button class="o-button o-button--default" [disabled]="!previousEnabled" (click)="previous.emit()">{{previousLabel}}</button>
+    <button class="o-button o-button--success" [disabled]="!nextEnabled" (click)="next.emit()">{{nextLabel}}</button>
+  </div>
+</div>

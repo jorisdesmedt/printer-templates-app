@@ -1,0 +1,14 @@
+<div class="tile">
+  <div class="icon">
+    <i
+      class="fa "
+      [class.fa-align-left]="type === TextAlignment.LEFT"
+      [class.fa-align-center]="type === TextAlignment.CENTER"
+      [class.fa-align-right]="type === TextAlignment.RIGHT"
+    >
+    </i>
+  </div>
+  <div class="name">
+    {{type}}
+  </div>
+</div>

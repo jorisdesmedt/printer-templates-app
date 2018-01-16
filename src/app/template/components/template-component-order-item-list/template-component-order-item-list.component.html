@@ -1,0 +1,10 @@
+<div class="list">
+  <template-component-order-item
+    *ngFor="let templateComponentItem of templateComponentItems; index as i;"
+    class="item"
+    [templateComponentItem]="templateComponentItem"
+    (remove)="onTemplateComponentRemove(templateComponentItem, i)"
+    (up)="onTemplateComponentMoveUp(templateComponentItem, i)"
+    (down)="onTemplateComponentMoveDown(templateComponentItem, i)"
+  ></template-component-order-item>
+</div>

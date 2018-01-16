@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="title">{{templateComponentItem.title}}</div>
+  <div class="actions">
+    <button class="action o-button o-button--primary" (click)="down.emit()">
+      <i class="fa fa-chevron-circle-down"></i>
+    </button>
+    <button class="action o-button o-button--primary" (click)="remove.emit()">
+      <i class="fa fa-remove"></i>
+    </button>
+    <button class="action o-button o-button--primary" (click)="up.emit()">
+      <i class="fa fa-chevron-circle-up"></i>
+    </button>
+  </div>
+</div>

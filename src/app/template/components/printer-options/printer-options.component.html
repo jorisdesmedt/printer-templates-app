@@ -1,0 +1,8 @@
+<div class="option-wrapper">
+  <printer-tile *ngFor="let printer of printers"
+                class="option"
+                [name]="printer.name"
+                (click)="selectTemplateType(printer)"
+                [class.selected]="value?.id === printer.id"
+  ></printer-tile>
+</div>

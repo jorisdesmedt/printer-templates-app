@@ -1,0 +1,15 @@
+<main>
+  <nav>
+    <h4>
+      <span class="child">
+        Templates
+      </span>
+    </h4>
+    <div class="actions">
+      <a class="o-button o-button--primary o-button--small" [routerLink]="['new']">Create</a>
+    </div>
+  </nav>
+  <section>
+    <template-grid [templates]="(templates$ | async)" (select)="onSelect($event)"></template-grid>
+  </section>
+</main>

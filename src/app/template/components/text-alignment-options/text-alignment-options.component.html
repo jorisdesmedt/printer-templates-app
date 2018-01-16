@@ -1,0 +1,17 @@
+<div class="option-wrapper">
+  <text-alignment-tile class="option"
+                 [type]="TextAlignment.LEFT"
+                 (click)="selectTemplateType(TextAlignment.LEFT)"
+                 [class.selected]="value === TextAlignment.LEFT"
+  ></text-alignment-tile>
+  <text-alignment-tile class="option"
+                 [type]="TextAlignment.CENTER"
+                 (click)="selectTemplateType(TextAlignment.CENTER)"
+                 [class.selected]="value === TextAlignment.CENTER"
+  ></text-alignment-tile>
+  <text-alignment-tile class="option"
+                 [type]="TextAlignment.RIGHT"
+                 (click)="selectTemplateType(TextAlignment.RIGHT)"
+                 [class.selected]="value === TextAlignment.RIGHT"
+  ></text-alignment-tile>
+</div>
